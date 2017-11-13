@@ -13,7 +13,8 @@
   "dependencies": {
     "express": "^4.16.2",
     "mongoose": "^4.13.2",
-    "nodemon": "^1.12.1"
+    "nodemon": "^1.12.1",
+    "passport-google-oauth20": "^1.0.0"
   },
   "devDependencies": {
     "eslint": "^4.11.0"
