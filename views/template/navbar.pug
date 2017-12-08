@@ -2,7 +2,7 @@ nav.grey.darken-3
   .container
     .nav-wrapper
       a.brand-logo.center(href="/stories") StoryBooks
-      a.button-collapse.show-on-large(href="#", data-activates="main-menu")
+      a.button-collapse.show-on-large.js-button(href="#", data-activates="main-menu")
         i.fa.fa-bars
       // RIGHT NAV
       ul.right.hide-on-small-only
@@ -15,7 +15,8 @@ nav.grey.darken-3
         else
           li
             a(href="/stories")
-              i.fa.fa-book= 'Public Stories'
+              i.fa.fa-book
+              = 'Public Stories'
 
       // SIDE MENU
       ul#main-menu.side-nav
@@ -23,19 +24,23 @@ nav.grey.darken-3
         else
           li
             a.btn.red.darken-1(href="/auth/google")
-              i.fa.fa-google.left= 'Login With Google'
-
+              i.fa.fa-google.left
+              = 'Login With Google'
           li
             a(href="/stories")
-              i.fa.fa-book= 'Public Stories'
+              i.fa.fa-book
+              = 'Public Stories'
         if user
           li.divider
           li
             a(href="/dashboard")
-              i.fa.fa-cog= 'Dashboard'
+              i.fa.fa-cog
+              = 'Dashboard'
           li
             a(href="/stories/my")
-              i.fa.fa-user= 'My Stories'
+              i.fa.fa-user
+              = 'My Stories'
           li
             a(href="/auth/logout")
-              i.fa.fa-sign-out= 'Logout'
+              i.fa.fa-sign-out
+              = 'Logout'

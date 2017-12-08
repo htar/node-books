@@ -1,7 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const cookieParser = require('cookie-parser');
-const session  = require('express-session');
+const session = require('express-session');
 const passport = require('passport');
 const path = require('path');
 
@@ -34,18 +34,18 @@ app.use(express.static(path.join(__dirname, 'public')));
 mongoose.Promise = global.Promise;
 
 // Mongoose Connect 
-mongoose.connect(keys.mongoURI,{
-  useMongoClient:true
+mongoose.connect(keys.mongoURI, {
+  useMongoClient: true
 })
-  .then(()=>{
+  .then(() => {
     console.log('MongoDB connected');
   })
-  .catch(err=> console.log(err));
+  .catch(err => console.log(err));
 
 app.use(cookieParser());
 app.use(session({
-  secret:'secret',
-  resave:false,
+  secret: 'secret',
+  resave: false,
   saveUninitialized: false
 }));
 //Passport Middleware
@@ -53,9 +53,9 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 //Save global vares
-app.use((req,res,next)=>{
+app.use((req, res, next) => {
   res.locals.user = req.user || null;
-  next();
+  next()
 })
 
 // Use Routes

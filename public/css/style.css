@@ -1,0 +1,9 @@
+.side-nav{
+  -webkit-transition: all .3s linear;
+  -moz-transition: all .3s linear;
+  transition: all .3s linear;
+
+}
+.side-nav.active{
+  left: 315px;
+}
