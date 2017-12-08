@@ -18,6 +18,7 @@ require('./config/passport')(passport);
 // Load Routes
 const index = require('./routes/index');
 const auth = require('./routes/auth');
+const stories = require('./routes/stories');
 
 //Load Keys
 const keys = require('./config/keys')
@@ -59,13 +60,9 @@ app.use((req, res, next) => {
 })
 
 // Use Routes
-app.get('/', (req, res) => {
-  res.render('index');
-});
+app.use('/', index);
 app.use('/auth', auth);
-
-
-
+app.use('/stories', stories);
 
 app.listen(port, () => {
   console.log(`Server started on  port ${port}`);

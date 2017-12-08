@@ -1,0 +1,14 @@
+-var title = 'Index Page'
+include template/head.pug
+body
+  include template/navbar.pug
+  main
+    .container
+      h1= 'Welcome!'
+      p= 'Welcom to StoryBooks 1.0.0'
+      a.red.darken-1.btn(href='/auth/google')
+        i.fa.fa-google.left
+        = 'Login With Google'
+
+
+include template/footer.pug

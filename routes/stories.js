@@ -1,12 +1,14 @@
 const express = require('express');
 const router = express.Router();
 
+// Sories Index
 router.get('/', (req, res) => {
-  res.render('index');
+  res.render('stories/index');
 });
 
-router.get('/dashboard', (req, res) => {
-  res.render('dashboard');
+// Add Story Form
+router.get('/add', (req, res) => {
+  res.render('stories/add');
 });
 
 module.exports = router;

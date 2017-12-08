@@ -1,0 +1,13 @@
+-var title = 'Index Page'
+include template/head.pug
+body
+  include template/navbar.pug
+  main
+    .container
+      if user && user.firstName
+        h1= `Welcome ${user.firstName}`
+      h4= "Your Stories"
+      
+
+
+include template/footer.pug
