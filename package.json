@@ -17,6 +17,7 @@
     "mongoose": "^4.13.2",
     "nodemon": "^1.12.1",
     "passport": "^0.4.0",
+    "pug": "^2.0.0-rc.4",
     "passport-google-oauth20": "^1.0.0"
   },
   "devDependencies": {
