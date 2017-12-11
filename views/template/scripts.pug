@@ -1,13 +1,19 @@
  <!-- Compiled and minified JavaScript -->
 
-script(src='https://code.jquery.com/jquery-3.2.1.slim.min.js', integrity='sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN', crossorigin='anonymous')
+script(src='http://code.jquery.com/jquery-2.1.2.min.js', )
 
-script(src='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js')
+script(src='http://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js')
+script(src='https://cdn.ckeditor.com/4.7.3/standard/ckeditor.js')
 
 script(type='text/javascript')
 
-  | let button = document.querySelector('.js-button')
-  | let navbar = document.querySelector('#main-menu')
-  | button.addEventListener('click',function(){
-  |  navbar.classList.toggle('active')
-  | })
+
+  | $(document).ready(function() {
+  |  $('.js-button').on('click',function(){
+  |   $('#main-menu').toggleClass('active')
+  |  })
+  |  $('select').material_select();
+  | });
+  | CKEDITOR.replace('body',{
+  |   plugins: 'wysiwygarea,toolbar,basicstyles,link'
+  | });
