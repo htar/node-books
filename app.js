@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const cookieParser = require('cookie-parser');
+const bodyParser = require('body-parser');
 const session = require('express-session');
 const passport = require('passport');
 const path = require('path');
@@ -8,9 +9,12 @@ const path = require('path');
 const app = express();
 const port = process.env.PORT || 5000;
 
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
 //load User Model 
 require('./models/User');
+require('./models/Story');
 
 // Passport Config
 require('./config/passport')(passport);
@@ -21,7 +25,7 @@ const auth = require('./routes/auth');
 const stories = require('./routes/stories');
 
 //Load Keys
-const keys = require('./config/keys')
+const keys = require('./config/keys');
 
 // Pug Middleware
 app.set('view engine', 'pug');
@@ -56,8 +60,8 @@ app.use(passport.session());
 //Save global vares
 app.use((req, res, next) => {
   res.locals.user = req.user || null;
-  next()
-})
+  next();
+});
 
 // Use Routes
 app.use('/', index);

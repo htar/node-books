@@ -20,18 +20,20 @@ const StorySchema = new Schema ({
     default: true
   },
   comments:[{
-    commentsBody:String,
-    required: true
+    commentBody:{
+      type:String,
+      required: true
+    },
+    commentDate:{
+      type:Date,
+      default: Date.now
+    },
+    commentUser:{
+      type: Schema.Types.ObjectId,
+      ref:'users'
+    }
   }],
-  commentDate:{
-    type:Date,
-    default: Date.now
-  },
-  commentUser:{
-    type: Schema.Types.ObjectId,
-    ref:'users'
-  },
-  users:{
+  user:{
     type: Schema.Types.ObjectId,
     ref:'users'
   },
