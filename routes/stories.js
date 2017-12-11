@@ -7,7 +7,13 @@ const {ensureAuthenticated,ensureGuest} = require('../helpers/auth');
 
 // Sories Index
 router.get('/', (req, res) => {
-  res.render('stories/index');
+  Story.find({status:'public'})
+    .populate('user')
+    .then(stories=>{
+      res.render('stories/index',{
+        stories:stories
+      });
+    });
 });
 
 // Add Story Form
@@ -39,8 +45,8 @@ router.post('/', (req, res) => {
   new Story(newStory)
     .save()
     .then( story =>{
-      res.redirect(`/stories/show/${story.id}`)
-    })
+      res.redirect(`/stories/show/${story.id}`);
+    });
 });
 
 module.exports = router;
