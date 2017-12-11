@@ -1,16 +1,22 @@
- <!-- Compiled and minified JavaScript -->
+footer.page-footer
+  .container
+    .row
+      .col.l6.s12
+        h5.white-text StoryBooks
+        p.grey-text.text-lighten-4 You can use rows and columns here to organize your footer content.
+      .col.l4.offset-l2.s12
+        h5.white-text Links
+        ul
+          li
+            a.grey-text.text-lighten-3(href='/stories') Public Stories
+          li
+            a.grey-text.text-lighten-3(href='/about') About
 
-script(src='https://code.jquery.com/jquery-3.2.1.slim.min.js', integrity='sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN', crossorigin='anonymous')
+  .footer-copyright
+    .container
+      | © 2017 StoryBooks
+      a.grey-text.text-lighten-4.right(href='#!') More Links
 
-script(src='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js')
-
-script(type='text/javascript')
-
-  | let button = document.querySelector('.js-button')
-  | let navbar = document.querySelector('#main-menu')
-  | button.addEventListener('click',function(){
-  |  navbar.classList.toggle('active')
-  | })
 
   
 

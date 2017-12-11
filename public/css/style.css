@@ -1,3 +1,13 @@
+body{
+display: flex;
+min-height: 100vh;
+flex-direction: column;
+}
+
+main{
+  flex: 1 0 auto;
+}
+
 .side-nav{
   -webkit-transition: all .3s linear;
   -moz-transition: all .3s linear;
@@ -7,3 +17,5 @@
 .side-nav.active{
   left: 315px;
 }
+
+ 

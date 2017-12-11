@@ -1,0 +1,13 @@
+ <!-- Compiled and minified JavaScript -->
+
+script(src='https://code.jquery.com/jquery-3.2.1.slim.min.js', integrity='sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN', crossorigin='anonymous')
+
+script(src='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js')
+
+script(type='text/javascript')
+
+  | let button = document.querySelector('.js-button')
+  | let navbar = document.querySelector('#main-menu')
+  | button.addEventListener('click',function(){
+  |  navbar.classList.toggle('active')
+  | })
