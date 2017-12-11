@@ -1,5 +1,8 @@
 const express = require('express');
 const router = express.Router();
+const mongoose = require('mongoose');
+const Story = mongoose.model('stories');
+const User = mongoose.model('users');
 const {ensureAuthenticated,ensureGuest} = require('../helpers/auth');
 
 // Sories Index
@@ -14,9 +17,30 @@ router.get('/add',ensureAuthenticated, (req, res) => {
 
 // Process Story Form
 router.post('/', (req, res) => {
-  console.log(req.body,'Story form data');
-  // res.render('stories/add');
-  res.send('send');
+  let allowComments;
+
+  if (req.body.allowComments) {
+    allowComments = true;
+    
+  } else {
+    allowComments = false;
+    
+  }
+
+  const newStory = {
+    title: req.body.title,
+    body: req.body.body,
+    status: req.body.status,
+    allowComments: allowComments,
+    user: req.user.id
+  }
+
+  //Create Story
+  new Story(newStory)
+    .save()
+    .then( story =>{
+      res.redirect(`/stories/show/${story.id}`)
+    })
 });
 
 module.exports = router;
