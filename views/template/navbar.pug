@@ -1,7 +1,7 @@
 nav.grey.darken-3
   .container
     .nav-wrapper
-      a.brand-logo.center(href="/stories") StoryBooks
+      a.brand-logo.center(href="/") StoryBooks
       a.button-collapse.show-on-large.js-button(href="#", data-activates="main-menu")
         i.fa.fa-bars
       // RIGHT NAV
@@ -44,3 +44,5 @@ nav.grey.darken-3
             a(href="/auth/logout")
               i.fa.fa-sign-out
               = 'Logout'
+if user
+  include add-button.pug
