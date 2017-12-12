@@ -7,6 +7,24 @@ body
       if user && user.firstName
         h1= `Welcome ${user.firstName}`
       h4= "Your Stories"
+      if stories
+        table.striped
+          thead
+            tr
+              th Title
+              th Date
+              th Status
+              th
+          tbody
+            each item in stories
+              tr
+                td
+                  a(href=`/stories/show/${item.id}`)= item.title
+                td= item.data
+                td
+                  span.dash-status= item.status
+      else
+        p You havn't any stories yet
       
 
 
