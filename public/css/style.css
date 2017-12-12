@@ -25,4 +25,8 @@ footer{
   margin-top: 20px;
 }
 
+img.responsive-img{
+  max-width: 100px;
+}
+
  

@@ -4,7 +4,24 @@ body
   include ../template/navbar.pug
   main
     .container
-      h1= `Show Story`
+      if story
+        .row
+          .col.s12.m8
+              h3= story.title
+              .card.story
+                  .card-content
+                    span.card-title #{formatDate(story.date,'MMMM Do YYYY')}
+                    div !{story.body}
+                      
+          .col.s12.m4
+              .card.center-align
+                  .card-content
+                      span.card-title= story.user.firstName
+                        = story.user.lastName
+                      img.circle.responsive-img(src=story.user.image)
+                  .card-action
+                      a(href=`/stories/user/${story.user.id}`)= `More From ${story.user.firstName}`
+
 
       
 

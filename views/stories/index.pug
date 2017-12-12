@@ -15,7 +15,7 @@ body
                     i.fa.fa-pencil
                 .card-content.center-align
                   h5= item.title
-                  p.story-text= item.body
+                  p.story-text !{item.body}
                   br
                   if item && item.user
                     .chip

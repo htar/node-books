@@ -5,10 +5,16 @@ const bodyParser = require('body-parser');
 const session = require('express-session');
 const passport = require('passport');
 const path = require('path');
+const methodOverride = require('method-override')
+
 
 const app = express();
 const port = process.env.PORT || 5000;
 
+// Method Override Middleware
+app.use(methodOverride('_method'))
+
+//Body Parder Middleware
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 

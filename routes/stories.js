@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const Story = mongoose.model('stories');
 const User = mongoose.model('users');
 const {ensureAuthenticated,ensureGuest} = require('../helpers/auth');
+const {formatDate} = require('../helpers/pug');
 
 // Sories Index
 router.get('/', (req, res) => {
@@ -11,7 +12,21 @@ router.get('/', (req, res) => {
     .populate('user')
     .then(stories=>{
       res.render('stories/index',{
-        stories:stories
+        stories: stories
+      });
+    });
+});
+
+// Show Single Story
+router.get('/show/:id', (req, res) => {
+  Story.findOne({
+    _id: req.params.id
+  })
+    .populate('user')
+    .then(story => {
+      res.render('stories/show', {
+        story: story,
+        formatDate: formatDate
       });
     });
 });
